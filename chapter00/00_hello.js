@@ -208,4 +208,7 @@ person01["job"] = "teacher";
 
 console.log(person01);
 
-person01 = {} // 객체에 반값을 재대입
+// const로 선언한 객체 자체를 바꾸려고 하면
+person01 = {} // 객체에 반값을 재대입 -> 오류발생
+// Uncaught TypeError: Assignment to constant variable.
+// at 00_hello.js:211:10 오류 발생
