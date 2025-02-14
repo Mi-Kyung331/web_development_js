@@ -94,7 +94,7 @@ function onUserShoot(shootType) {
   let computerButtons = document.getElementsByClassName('btn-computer');
   for (let i = 0; i < computerButtons.length; i++) {
     computerButtons[i].disabled = false;
-  }
+  } 
 
   // onUserShoot()을 호출했을 때만 shootLeft가 --; 되어야 함.
   shootLeft --;
@@ -102,4 +102,20 @@ function onUserShoot(shootType) {
 
   let shootLeftElement = document.getElementById('shots-left');
   shootLeftElement.innerHTML = shootLeft;
+
+  // 조건문을 적용 -> shootLeft === 0일 때 게임종료
+  if (shootLeft === 0) {
+    // 사용자가 이겼을 때 - 졌을 때 - 비겼을 때
+    // 이겼습니다 // 졌습니다 // 비겼습니다
+    if (userScore > comScore) {
+      alert('이겼습니다');
+      textElement.innerHTML = '이겼습니다'
+    } else if (userScore < comScore) {
+      alert('졌습니다');
+      textElement.innerHTML = '졌습니다'
+    } else {
+      alert('비겼습니다');
+      textElement.innerHTML = '졌습니다'
+    }
+  }
 }
